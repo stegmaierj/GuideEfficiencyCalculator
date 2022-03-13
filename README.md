@@ -3,7 +3,9 @@
 ## Preliminaries
 The software GuideEfficiencyCalculator is a standalone version of the software described in the following paper, which should be cited if you find this work useful:
 
-	Etard, C., Joshi, S., Stegmaier, J., Mikut, R., & Strähle, U. "Tracking of Indels by DEcomposition is a Simple and Effective Method to Assess Efficiency of Guide RNAs in Zebrafish". Zebrafish, 14(6), 586-588. 2017.
+```
+Etard, C., Joshi, S., Stegmaier, J., Mikut, R., & Strähle, U. "Tracking of Indels by DEcomposition is a Simple and Effective Method to Assess Efficiency of Guide RNAs in Zebrafish". Zebrafish, 14(6), 586-588. 2017.
+```
 
 The software is based on MATLAB and additionally requires the *Image Processing Toolbox* as well as the *Bioinformatics Toolbox*.
 
