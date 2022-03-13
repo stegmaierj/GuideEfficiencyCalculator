@@ -10,7 +10,7 @@ The software is based on MATLAB and additionally requires the *Image Processing 
 ## Step 1: Upload Sequence Trace Files
 Start the script called `GuideEfficiencyCalculatorLocal.m` by opening it in MATLAB and pressing the *Run* button on the top menu bar. The script will then open up a file upload dialog. Select the input files you want to process (they should appear on the right-hand list box) and press *Done* once all files are selected. 
 ![File Selection Dialog](Data/Screenshots/FileSelection.png)
-Valid input files should be in the `*.scf` format. Please convert input files in different formats, *e.g.*, using software tools such as <a  href="http://biologylabs.utah.edu/jorgensen/wayned/ape/" target="_blank">ApE</a> or using the command-line tool <a href="http://sourceforge.net/projects/staden/files/io_lib/1.12.2/io_lib-1.12.2.tar.gz" target="_blank">io lib</a>.
+Valid input files should be in the `*.scf` format. Please convert input files in different formats, *e.g.*, using software tools such as <a  href="http://biologylabs.utah.edu/jorgensen/wayned/ape/" target="_blank">ApE</a> or using the command-line tool <a href="http://sourceforge.net/projects/staden/files/io_lib/1.12.2/io_lib-1.12.2.tar.gz" target="_blank">io lib</a>. A few `*.scf` demo files to test the software can be found in the `Data/` folder of this repository.
 
 
 ## Step 2: Sequence Preview and Selection of the PAM Location
