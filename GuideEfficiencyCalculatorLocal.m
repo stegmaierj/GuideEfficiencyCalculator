@@ -27,7 +27,7 @@
 %%
 
 %% add third party tools
-addpath('toolbox/');
+addpath('ThirdParty/');
 
 %% get the input files
 disp('Please select one or more *.scf files for processing. Folders are skipped but you can select files from multiple folders.');
