@@ -27,15 +27,27 @@
 %%
 
 %% add third party tools
-addpath('ThirdParty/');
+addpath('toolbox/');
 
 %% get the input files
-inputFiles = uipickfiles();
+disp('Please select one or more *.scf files for processing. Folders are skipped but you can select files from multiple folders.');
+inputFiles = uipickfiles('FilterSpec', '*.scf');
+
+%% 
+if (~iscell(inputFiles))
+    disp('No input files selected, aborting the processing. Please select *.scf files for processing!');
+end
 
 %% process all input files sequentially
 for i=1:length(inputFiles)
 
+    if (isfolder(inputFiles{i}))
+        disp(['Skipping folder ' inputFiles{i} '. Please select individual files!']);
+        continue;
+    end
+
     %% perform preview
+    disp(['Generating preview for ' inputFiles{i} ' ...']);
     [efficiency, stdDev, stdErr, figureHandle] = GuideEfficiencyCalculator(inputFiles{i}, -1, -1, true);
 
     %% maximize preview figure for PAM and radius estimation
@@ -47,7 +59,7 @@ for i=1:length(inputFiles)
     figure(figureHandle);
 
     %% ask the user for the PAM location and the radius to use
-    prompt = {'Enter Location of Interest:','Enter Radius:'};
+    prompt = {'Enter PAM Location:','Enter Radius:'};
     dlgtitle = 'Parameter Specification';
     dims = [1 35];
     definput = {'-1','50'};
@@ -55,6 +67,9 @@ for i=1:length(inputFiles)
     close(figureHandle);
 
     %% perform processing with the user-checked parameters
+    disp(['Generating result images for ' inputFiles{i} ' with L=' answer{1} ' and R=' answer{2} '...']);
     GuideEfficiencyCalculator(inputFiles{i}, str2double(answer{1}), str2double(answer{2}), false);
-end
 
+    [folder, file, ext] = fileparts(inputFiles{i});
+    disp(['Results for ' inputFiles{i} ' saved to ' folder filesep 'results' filesep]);
+end

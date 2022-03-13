@@ -331,9 +331,6 @@ function [efficiency, stdDev, stdErr, figureHandle] = GuideEfficiencyCalculator(
         else
             efficiency = 0; stdDev = 0; stdErr = 0;
         end
-        
-        %% display current status
-        disp([num2str(f * 100 / (length(inputFiles)-2)) '%']);
     end
 
     %% return figure handle
